@@ -23,6 +23,6 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	router := mux.NewRouter().StrictSlash(true)
-	router.HandleFunc("/{seconds}", handler).Methods("GET")
+	router.HandleFunc("/sleep/{seconds}", handler).Methods("GET")
 	log.Fatal(http.ListenAndServe(":8080", router))
 }
